@@ -15,8 +15,8 @@ export class Match {
   datePlay: Date;
 
   @ManyToOne(() => BoardGame, boardGame => boardGame.matches)
-  boardGameId: BoardGame;
+  boardGame: BoardGame;
 
-  @OneToMany(() => MatchPlayer, matchPlayer => matchPlayer.matchId)
+  @OneToMany(() => MatchPlayer, matchPlayer => matchPlayer.matchPlayerId)
   matchPlayers: MatchPlayer[];
 }

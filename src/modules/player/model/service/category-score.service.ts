@@ -27,13 +27,12 @@ export class CategoryScoreService {
 
     for (const payload of payloads) {
       const newCategoryScores = new CategoryScore();
-      const matchPlayer = await this.matchPlayerRepository.findOneBy({ matchPlayerID: payload.matchPlayerId });
+      const matchPlayer = await this.matchPlayerRepository.findOneBy({ matchPlayerId: payload.matchPlayerId });
       const category = await this.categoryRepository.findOneBy({ categoryId: payload.categoryId });
 
       newCategoryScores.matchPlayer = matchPlayer;
       newCategoryScores.category = category;
       newCategoryScores.score = payload.score;
-      newCategoryScores.categoryId = category.categoryId;
 
       const savedMatchPlayer = await this.categoryScoreRepository.save(newCategoryScores);
       newCategoryScoresArray.push(savedMatchPlayer);

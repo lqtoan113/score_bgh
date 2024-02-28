@@ -27,20 +27,21 @@ export class MatchService {
     const newMatch = new Match();
 
     newMatch.datePlay= new Date();
-    newMatch.boardGameId =board_game;
+    newMatch.boardGame =board_game;
     newMatch.descriptionMatch = match.descriptionMatch;
 
     return this.matchRepository.save(newMatch);
   }
 
   
-  async findAllMatchByGameId(board_gameId: number): Promise<Match[]> {
+  async findAllMatchByGameId(boardGameId: number): Promise<Match[]> {
     const allMatches = await this.matchRepository.createQueryBuilder('match')
-      .innerJoinAndSelect('match.board_game', 'board_game')
-      .where('board_game.board_gameId = :board_gameId', { board_gameId })
+      .innerJoinAndSelect('match.boardGame', 'boardgame')
+      .where('boardgame.boardGameId = :boardGameId', { boardGameId })
       .getMany();
   
     return allMatches;
-  }
+}
+
   
 }

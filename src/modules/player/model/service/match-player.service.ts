@@ -29,7 +29,7 @@ export class MatchPlayerService{
         const match = await this.matchRepository.findOneBy({ matchId: payload.matchId });
         const player = await this.playerRepository.findOneBy({ playerId: payload.playerId });
 
-        newMatchPlayers.matchId = match;
+        newMatchPlayers.match = match;
         newMatchPlayers.playerId = player;
         newMatchPlayers.totalResult=1;
         const savedMatchPlayer = await this.matchPlayerRepository.save(newMatchPlayers);

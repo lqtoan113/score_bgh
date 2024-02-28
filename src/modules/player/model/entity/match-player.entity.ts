@@ -8,17 +8,17 @@ import { Player } from './player.entity';
 @Entity()
 export class MatchPlayer {
   @PrimaryGeneratedColumn()
-  matchPlayerID: number;
+  matchPlayerId: number;
 
   @ManyToOne(() => Player, player => player.matchPlayers)
   playerId: Player;
 
   @ManyToOne(() => Match, match => match.matchPlayers)
-  matchId: Match;
+  match: Match;
 
   @Column()
   totalResult: number;
 
-  @OneToMany(() => CategoryScore, categoryScore => categoryScore.matchPlayerId)
+  @OneToMany(() => CategoryScore, categoryScore => categoryScore.categoryScoreId)
   categoryScores: CategoryScore[];
 }

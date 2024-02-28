@@ -15,8 +15,8 @@ export class Category {
   image: string;
 
   @ManyToOne(() => BoardGame, boardGame => boardGame.categories)
-  boardGameId: BoardGame;
+  boardGame: BoardGame;
 
-  @OneToMany(() => CategoryScore, categoryScore => categoryScore.categoryId)
+  @OneToMany(() => CategoryScore, categoryScore => categoryScore.category)
   categoryScores: CategoryScore[];
 }

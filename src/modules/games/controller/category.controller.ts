@@ -16,6 +16,7 @@ export class CategoryController {
   getAllCategory(): Promise<Category[]> {
     return this.categoryService.findAllCategory();
   }
+  
   @Get(':id')
   getAllCategoryByBoardGame(@Param('id') boardGameId: number): Promise<Category[]> {
     return this.categoryService.findAllCategoryByGameId(boardGameId);

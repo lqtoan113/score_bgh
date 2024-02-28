@@ -14,9 +14,9 @@ export class BoardGame {
   @Column()
   description: string;
 
-  @OneToMany(() => Category, category => category.boardGameId)
+  @OneToMany(() => Category, category => category.boardGame)
   categories: Category[];
 
-  @OneToMany(() => Match, match => match.boardGameId)
+  @OneToMany(() => Match, match => match.boardGame)
   matches: Match[];
 }

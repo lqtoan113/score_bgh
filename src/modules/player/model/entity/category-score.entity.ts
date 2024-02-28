@@ -7,10 +7,10 @@ import { Category } from 'src/modules/games/model/entity/category.entity';
 @Entity()
 export class CategoryScore {
   @PrimaryColumn()
-  categoryId: number;
+  categoryScoreId: number;
 
-  @PrimaryColumn()
-  matchPlayerId: number;
+  // @PrimaryColumn()
+  // matchPlayerId: number;
 
   @Column()
   score: number;

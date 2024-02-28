@@ -12,9 +12,10 @@ export class MatchController {
   getAllMatch(): Promise<Match[]> {
     return this.matchService.findAllMatch();
   }
+  
   @Get(':id')
-  getAllMatchByGameId(@Param('id') id: number): Promise<Match[]> {
-    return this.matchService.findAllMatchByGameId(id);
+  getAllMatchByBoardGame(@Param('id') boardGameId: number): Promise<Match[]> {
+    return this.matchService.findAllMatchByGameId(boardGameId);
   }
 
   @Post()

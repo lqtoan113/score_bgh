@@ -23,18 +23,19 @@ export class CategoryService {
     const board_game = await this.boardGameService.findOneGameById(categoryData.boardGameId)
     const category = new Category();
 
-    category.boardGameId = board_game;
+    category.boardGame = board_game;
     category.categoryName = categoryData.categoryName;
 
     return this.categoryRepository.save(category);
   }
 
   async findAllCategoryByGameId(boardGameId: number): Promise<Category[]> {
-    const allMatches = await this.categoryRepository.createQueryBuilder('category')
-      .innerJoinAndSelect('category.boardGameId', 'boardgame')
-      .where('boardgame.boardGameId = :boardGameId', { boardGameId })
+    const allCate = await this.categoryRepository.createQueryBuilder('category')
+      .innerJoinAndSelect('category.boardGame', 'boardgame')
+      .where('boardgame.boardGameId = :boardGameId', { boardGameId }) // Corrected parameter name
       .getMany();
 
-    return allMatches;
-  }
+    return allCate;
+}
+
 }
