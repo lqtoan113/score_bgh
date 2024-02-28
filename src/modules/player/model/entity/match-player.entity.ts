@@ -11,14 +11,14 @@ export class MatchPlayer {
   matchPlayerID: number;
 
   @ManyToOne(() => Player, player => player.matchPlayers)
-  player: Player;
+  playerId: Player;
 
   @ManyToOne(() => Match, match => match.matchPlayers)
-  match: Match;
+  matchId: Match;
 
   @Column()
   totalResult: number;
 
-  @OneToMany(() => CategoryScore, categoryScore => categoryScore.matchPlayer)
+  @OneToMany(() => CategoryScore, categoryScore => categoryScore.matchPlayerId)
   categoryScores: CategoryScore[];
 }

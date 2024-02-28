@@ -1,16 +1,16 @@
-// src/category-score/category-score.entity.ts
-import { Category } from 'src/modules/games/model/entity/category.entity';
-import { Entity, ManyToOne, PrimaryColumn, Column } from 'typeorm';
-import { MatchPlayer } from './match-player.entity';
+// category-score.entity.ts
 
+import { Entity, PrimaryColumn, Column, ManyToOne } from 'typeorm';
+import { MatchPlayer } from './match-player.entity';
+import { Category } from 'src/modules/games/model/entity/category.entity';
 
 @Entity()
 export class CategoryScore {
   @PrimaryColumn()
-  categoryID: number;
+  categoryId: number;
 
   @PrimaryColumn()
-  matchPlayerID: number;
+  matchPlayerId: number;
 
   @Column()
   score: number;
@@ -21,3 +21,4 @@ export class CategoryScore {
   @ManyToOne(() => MatchPlayer, matchPlayer => matchPlayer.categoryScores)
   matchPlayer: MatchPlayer;
 }
+

@@ -6,17 +6,17 @@ import { MatchPlayer } from './match-player.entity';
 @Entity()
 export class Player {
   @PrimaryGeneratedColumn()
-  playerID: number;
+  playerId: number;
 
   @Column()
   name: string;
 
   @Column()
-  age: Date;
+  age: number;
 
   @Column()
   nickname: string;
 
-  @OneToMany(() => MatchPlayer, matchPlayer => matchPlayer.player)
+  @OneToMany(() => MatchPlayer, matchPlayer => matchPlayer.playerId)
   matchPlayers: MatchPlayer[];
 }

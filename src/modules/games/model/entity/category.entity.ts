@@ -3,21 +3,20 @@ import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from 'ty
 import { BoardGame } from './board-game.entity';
 import { CategoryScore } from 'src/modules/player/model/entity/category-score.entity';
 
-
 @Entity()
 export class Category {
   @PrimaryGeneratedColumn()
-  categoryID: number;
+  categoryId: number;
 
   @Column()
-  name: string;
+  categoryName: string;
 
   @Column()
-  description: string;
+  image: string;
 
   @ManyToOne(() => BoardGame, boardGame => boardGame.categories)
-  boardGame: BoardGame;
+  boardGameId: BoardGame;
 
-  @OneToMany(() => CategoryScore, categoryScore => categoryScore.category)
+  @OneToMany(() => CategoryScore, categoryScore => categoryScore.categoryId)
   categoryScores: CategoryScore[];
 }

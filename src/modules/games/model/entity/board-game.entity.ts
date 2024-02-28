@@ -6,7 +6,7 @@ import { Match } from './match.entity';
 @Entity()
 export class BoardGame {
   @PrimaryGeneratedColumn()
-  boardGameID: number;
+  boardGameId: number;
 
   @Column()
   name: string;
@@ -14,9 +14,9 @@ export class BoardGame {
   @Column()
   description: string;
 
-  @OneToMany(() => Category, category => category.boardGame)
+  @OneToMany(() => Category, category => category.boardGameId)
   categories: Category[];
 
-  @OneToMany(() => Match, match => match.boardGame)
+  @OneToMany(() => Match, match => match.boardGameId)
   matches: Match[];
 }

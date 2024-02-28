@@ -6,7 +6,7 @@ import { BoardGame } from './board-game.entity';
 @Entity()
 export class Match {
   @PrimaryGeneratedColumn()
-  matchID: number;
+  matchId: number;
 
   @Column()
   descriptionMatch: string;
@@ -15,8 +15,8 @@ export class Match {
   datePlay: Date;
 
   @ManyToOne(() => BoardGame, boardGame => boardGame.matches)
-  boardGame: BoardGame;
+  boardGameId: BoardGame;
 
-  @OneToMany(() => MatchPlayer, matchPlayer => matchPlayer.match)
+  @OneToMany(() => MatchPlayer, matchPlayer => matchPlayer.matchId)
   matchPlayers: MatchPlayer[];
 }
