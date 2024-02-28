@@ -20,7 +20,7 @@ export class BoardGameController {
   }
 
   @Post()
-  create(@Body() boardGame: CreateBoardGameDto): Promise<BoardGame> {
+  createNewBoardGame(@Body() boardGame: CreateBoardGameDto): Promise<BoardGame> {
     return this.boardGameService.createNewBoardGame(boardGame);
   }
 }

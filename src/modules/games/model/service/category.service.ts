@@ -18,7 +18,7 @@ export class CategoryService {
     return this.categoryRepository.find();
   }
 
-  async createNewColumn(categoryData: CreateCategoryDto): Promise<Category> {
+  async createNewCategory(categoryData: CreateCategoryDto): Promise<Category> {
 
     const board_game = await this.boardGameService.findOneGameById(categoryData.boardGameId)
     const category = new Category();

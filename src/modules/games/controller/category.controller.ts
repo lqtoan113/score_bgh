@@ -22,7 +22,7 @@ export class CategoryController {
 
   }
   @Post()
-  create(@Body() categoryData: CreateCategoryDto): Promise<Category> {
-    return this.categoryService.createNewColumn(categoryData);
+  createNewCategory(@Body() categoryData: CreateCategoryDto): Promise<Category> {
+    return this.categoryService.createNewCategory(categoryData);
   }
 }
