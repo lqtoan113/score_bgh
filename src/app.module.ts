@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './database.module';
-import * as Joi from 'joi';
+// import * as Joi from 'joi';
 import { PlayerModule } from './modules/player/player.module';
 import { GameModule } from './modules/games/game.module';
 
