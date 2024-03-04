@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post } from "@nestjs/common";
 import { MatchPlayerService } from "../model/service/match-player.service";
 import { CreateMatchPlayerDto } from "../model/dto/match-player.dto";
 import { MatchPlayer } from "../model/entity/match-player.entity";
@@ -10,6 +10,11 @@ export class MatchPlayerController{
 @Get()
 getAllMatchPlayer(): Promise<MatchPlayer[]> {
     return this.matchPlayerService.findAllMatchPlayer();
+  }
+
+@Get(':id')
+getAllMatchPlayerByMatchId(@Param('id') matchId:number): Promise<MatchPlayer[]> {
+    return this.matchPlayerService.findAllMatchPlayerByMatchId(matchId);
   }
   
 @Post()
