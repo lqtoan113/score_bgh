@@ -10,13 +10,13 @@ import { GameModule } from './modules/games/game.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-    validationSchema: Joi.object({
-      POSTGRES_DB: Joi.string().required(),
-      POSTGRES_USER: Joi.string().required(),
-      POSTGRES_PASSWORD: Joi.string().required(),
-      POSTGRES_HOST: Joi.string().required(),
-      POSTGRES_PORT: Joi.string().required(),
-    }),
+    // validationSchema: Joi.object({
+    //   POSTGRES_DB: Joi.string().required(),
+    //   POSTGRES_USER: Joi.string().required(),
+    //   POSTGRES_PASSWORD: Joi.string().required(),
+    //   POSTGRES_HOST: Joi.string().required(),
+    //   POSTGRES_PORT: Joi.string().required(),
+    // }),
   }),
   PlayerModule,GameModule,
   DatabaseModule,],
