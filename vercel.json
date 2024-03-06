@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "modules/games/controller/board-game.controller.js",
+      "dest": "modules/games/controller/board-game.getAllBoardGame",
       "methods": ["GET"]
     }
   ]
