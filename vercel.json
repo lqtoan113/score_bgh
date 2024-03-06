@@ -2,7 +2,7 @@
   "version": 2,
   "routes": [
     {
-      "src": "/modules/games/controller/board-game",
+      "src": "/(.*)",
       "dest": "modules/games/controller/board-game.controller.js",
       "methods": ["GET"]
     }
