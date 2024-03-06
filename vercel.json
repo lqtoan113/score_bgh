@@ -2,8 +2,10 @@
   "version": 2,
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "main.d.ts"
+      "src": "/modules/games/controller/board-game",
+      "dest": "modules/games/controller/board-game.controller.js",
+      "methods": ["GET"]
     }
   ]
 }
+
