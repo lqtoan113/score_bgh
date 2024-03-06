@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "modules/games/controller/board-game.getAllBoardGame",
+      "dest": "score_bgh/src/modules/games/controller/board-game.controller.ts",
       "methods": ["GET"]
     }
   ]
