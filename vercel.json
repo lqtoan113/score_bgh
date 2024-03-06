@@ -2,17 +2,21 @@
   "version": 2,
   "builds": [
     {
-      "src": "nest-build", 
-      "use": "@vercel/node" 
+      "src": "npm run build", 
+      "use": "@vercel/node",
+      "config": {
+        "installCommand": "npm install" 
+      }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/main.js" 
+      "dest": "dist/main.js"
     }
   ],
   "env": {
+    "NPM_INSTALL_FLAGS": "--only=prod", 
     "POSTGRES_DB": "score-bg2",
     "POSTGRES_USER": "postgres",
     "POSTGRES_PASSWORD": "110302",
