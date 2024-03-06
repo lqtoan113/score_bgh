@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "score-bgh/src/main.ts",
+      "dest": "score_bgh/src/main.ts",
       "methods": ["GET", "POST"]
     }
   ]
