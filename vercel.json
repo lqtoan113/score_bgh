@@ -1,10 +1,16 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "src/main.ts",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "score_bgh/src/modules/games/controller/board-game.controller.ts",
-      "methods": ["GET"]
+      "dest": "src/main.ts",
+      "methods": ["GET", "POST", "PUT", "DELETE"]
     }
   ]
 }
